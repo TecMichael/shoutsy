@@ -16,7 +16,7 @@ class FeaturedShouters extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: 200,
+          // height: 200,
           width: 200,
           decoration: BoxDecoration(
             image: DecorationImage(image: AssetImage(img), fit: BoxFit.cover),
@@ -32,10 +32,17 @@ class FeaturedShouters extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const Padding(
-                padding: EdgeInsets.only(left: 130,bottom: 22),
-                child: CircleAvatar(
-                  radius: 24,
-                  backgroundImage: AssetImage('assets/small.jpg'),
+                padding: EdgeInsets.only(left: 130, bottom: 10),
+                child: Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Colors.white,
+                    child: CircleAvatar(
+                      radius: 24,
+                      backgroundImage: AssetImage('assets/small.jpg'),
+                    ),
+                  ),
                 ),
               ),
               Padding(
