@@ -7,10 +7,11 @@ class ShoutsyTools extends StatelessWidget {
     required this.text,
     required this.text2,
     required this.color,
+    required this.image,
     required this.color2,
   }) : super(key: key);
   final String text;
-  final String text2;
+  final String text2,image;
   final Color color;
   final Color color2;
 
@@ -19,11 +20,13 @@ class ShoutsyTools extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: 190,
-          width: 144,
+          width: 135,
+          padding: EdgeInsets.symmetric(horizontal: 10,vertical: 15),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(20),
             gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
               colors: [color, color2],
             ),
           ),
@@ -31,11 +34,13 @@ class ShoutsyTools extends StatelessWidget {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children:  [
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: CircleAvatar(
-                      backgroundColor: Color(0xff29B3FE),
+                      backgroundColor: image.contains('loud')? Color(0xff29B3FE):Colors.transparent,
+                        child:Image.asset(image,height: image.contains('loud')?  23:30,)
+
                     ),
                   )
                 ],
@@ -48,7 +53,7 @@ class ShoutsyTools extends StatelessWidget {
                     text,
                     style: GoogleFonts.roboto(
                         fontWeight: FontWeight.w700,
-                        fontSize: 20,
+                        fontSize: 16,
                         color: Colors.white),
                   ),
                 ],
@@ -61,7 +66,7 @@ class ShoutsyTools extends StatelessWidget {
                     text2,
                     style: GoogleFonts.roboto(
                         fontWeight: FontWeight.w400,
-                        fontSize: 14,
+                        fontSize: 12,
                         color: Colors.white),
                   )
                 ],
@@ -80,11 +85,11 @@ class ShoutsyTools extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'see more',
+                          'See More',
                           style: GoogleFonts.roboto(
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.w600,
                               fontSize: 12,
-                              color: Colors.black),
+                              color: Color(0xFF7326B7)),
                         )
                       ],
                     ),

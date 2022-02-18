@@ -69,355 +69,373 @@ class BrandOverview extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(children: [
-          SafeArea(
-            child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
-              ),
-              child: Image.asset(
-                'assets/back.jpg',
-                fit: BoxFit.cover,
-                height: 190,
-                width: double.infinity,
-              ),
+        child: Column(
+          children: [
+            Stack(
+                children: [
+
+            Container(
+            height: 250,
+            decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+              'assets/back.jpg',
             ),
-          ),
-          SizedBox(
-            height: size.height,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(
-                    right: 130,
-                    bottom: 1,
-                    left: 25,
-                  ),
-                ),
-                SingleChildScrollView(
-                  child: Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(12),
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(22),
-                        topRight: Radius.circular(22),
+              fit: BoxFit.cover
+      )
+    ),),
+                  Container(
+                    height: 250,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Color(0xFF00C9FF).withOpacity(0.4), Colors.white.withOpacity(0.0),Color(0xFF00C9FF).withOpacity(0.3),Colors.white.withOpacity(0.5)],
                       ),
-                    ),
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 10),
-                        Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'HELLO',
-                                  style: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 30),
-                                ),
-                                const SizedBox(width: 10),
-                                Text(
-                                  'Nike,',
-                                  style: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 30),
-                                ),
-                              ],
+                    ),),
+              Container(
+                margin: EdgeInsets.only(top:220),
+                child: SizedBox(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(
+                          right: 130,
+                          bottom: 1,
+                          left: 25,
+                        ),
+                      ),
+                      SingleChildScrollView(
+                        child: Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(12),
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFFAFAFA),
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(35),
+                              topRight: Radius.circular(35),
                             ),
-                          ],
-                        ),
-                        const SizedBox(height: 10),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                'let’s find influencers to shout your brand out and grow!',
-                                style: GoogleFonts.roboto(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: const Color(0xffB5B5B5),
-                                ),
-                              )
-                            ],
                           ),
-                        ),
-                        const SizedBox(height: 20),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 27),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          child: Column(
                             children: [
-                              Container(
-                                height: 20,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                    color: const Color(0xff00E2C2),
-                                    borderRadius: BorderRadius.circular(10)),
+                              const SizedBox(height: 10),
+                              Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Hello',
+                                        style: GoogleFonts.roboto(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 24),
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Text(
+                                        'Nike,',
+                                        style: GoogleFonts.roboto(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 24),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 10),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 20),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'let’s find influencers to shout your brand out and grow!',
+                                      style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 12.5,
+                                        color: const Color(0xffB5B5B5),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 50,bottom: 3),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      'new',
-                                      style: GoogleFonts.poppins(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 8,
-                                          color: Colors.white),
-                                    ),
+                                    Container(
+                                      height: 20,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                          color: const Color(0xff00E2C2),
+                                          borderRadius: BorderRadius.circular(8)),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'New!',
+                                            style: GoogleFonts.poppins(
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 8,
+                                                color: Colors.white),
+                                          ),
+                                        ],
+                                      ),
+                                    )
                                   ],
                                 ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              'Overview',
-                              style: GoogleFonts.inter(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 16,
-                                  color: Colors.black),
-                            ),
-                            const SizedBox(width: 19),
-                            Text(
-                              'Profile',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16,
-                                color: const Color(0xff757575),
                               ),
-                            ),
-                            const SizedBox(width: 22),
-                            Text(
-                              'Workspaces',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16,
-                                color: const Color(0xff757575),
-                              ),
-                            ),
-                            const SizedBox(width: 22),
-                            Text(
-                              'Campaigns',
-                              style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16,
-                                color: const Color(0xff757575),
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 15),
-                        Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(12.0),
-                              child: Row(
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Container(
-                                    height: 62,
-                                    // width: 360,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey.withOpacity(0.4),
-                                          blurRadius: 9.5,
-                                          offset: const Offset(3, 5),
-                                        ),
-                                      ],
+                                  Text(
+                                    'Overview',
+                                    style: GoogleFonts.inter(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 14,
+                                        color: Colors.black),
+                                  ),
+                                  const SizedBox(width: 19),
+                                  Text(
+                                    'Profile',
+                                    style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: const Color(0xff757575),
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Row(
-                                          children: [
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 18, top: 10),
-                                              child: CircleAvatar(
-                                                backgroundColor:
-                                                    Color(0xff1AD598),
+                                  ),
+                                  const SizedBox(width: 22),
+                                  Text(
+                                    'Workspaces',
+                                    style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: const Color(0xff757575),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 22),
+                                  Text(
+                                    'Campaigns',
+                                    style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: const Color(0xff757575),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 15),
+                              Divider(height: 20,thickness: 1.3,),
+                              Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Container(
+                                      height: 62,
+                                      // width: 360,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.1),
+                                            blurRadius: 4,
+                                            spreadRadius: 5,
+                                            offset: const Offset(3, 5),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Row(
+                                            children: [
+                                               Padding(
+                                                padding: EdgeInsets.only(
+                                                    left: 18, top: 10),
+                                                child: CircleAvatar(
+                                                  backgroundColor:
+                                                      Color(0xff1AD598),
+                                                  child:Image.asset("assets/wallet.png",height: 20,)
+                                                ),
                                               ),
-                                            ),
-                                            const SizedBox(width: 10),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.only(top: 5),
-                                              child: Column(
+                                              const SizedBox(width: 10),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.only(top: 5),
+                                                child: Column(
+                                                  children: [
+                                                    Text(
+                                                      '\$23,345.06',
+                                                      style: GoogleFonts.roboto(
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                          fontSize: 18),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              right: 20, top: 3),
+                                                      child: Text(
+                                                        'Wallet Balance',
+                                                        style: GoogleFonts.roboto(
+                                                            fontWeight:
+                                                                FontWeight.w300,
+                                                            color: Colors.black,
+                                                            fontSize: 10),
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              Row(
                                                 children: [
-                                                  Text(
-                                                    '\$23,345.06',
-                                                    style: GoogleFonts.roboto(
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        fontSize: 20),
+                                                   Padding(
+                                                    padding: EdgeInsets.only(
+                                                        left: 20, top: 10),
+                                                    child: CircleAvatar(
+                                                      backgroundColor:
+                                                          Color(0xff29B3FE),
+                                                        child:Image.asset("assets/loud.png",height: 23,)
+
+                                                    ),
                                                   ),
+                                                  const SizedBox(width: 10),
                                                   Padding(
                                                     padding:
                                                         const EdgeInsets.only(
-                                                            right: 20, top: 3),
-                                                    child: Text(
-                                                      'Wallet Balance',
-                                                      style: GoogleFonts.roboto(
-                                                          fontWeight:
-                                                              FontWeight.w400,
-                                                          color: Colors.black,
-                                                          fontSize: 10),
+                                                            top: 8, right: 20),
+                                                    child: Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      children: [
+                                                        Text(
+                                                          '450',
+                                                          style:
+                                                              GoogleFonts.roboto(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w700,
+                                                                  fontSize: 18),
+                                                        ),
+                                                        Text(
+                                                          'Shoutsy Coins',
+                                                          style:
+                                                              GoogleFonts.roboto(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w300,
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontSize: 10),
+                                                        )
+                                                      ],
                                                     ),
-                                                  )
+                                                  ),
                                                 ],
                                               ),
-                                            ),
-                                            Row(
-                                              children: [
-                                                const Padding(
-                                                  padding: EdgeInsets.only(
-                                                      left: 30, top: 10),
-                                                  child: CircleAvatar(
-                                                    backgroundColor:
-                                                        Color(0xff29B3FE),
-                                                  ),
-                                                ),
-                                                const SizedBox(width: 10),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          top: 10, right: 20),
-                                                  child: Column(
-                                                    children: [
-                                                      Text(
-                                                        '450',
-                                                        style:
-                                                            GoogleFonts.roboto(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w700,
-                                                                fontSize: 20),
-                                                      ),
-                                                      Text(
-                                                        'Shoutsy Coins',
-                                                        style:
-                                                            GoogleFonts.roboto(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w400,
-                                                                color: Colors
-                                                                    .black,
-                                                                fontSize: 10),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 20),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Featured Shouters',
+                                        style: GoogleFonts.roboto(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      children: const [
+                                        FeaturedShouters(
+                                          text: 'Island boys',
+                                          img: 'assets/island.jpg',
+                                        ),
+                                        SizedBox(width: 20),
+                                        FeaturedShouters(
+                                          text: 'Sommer Ray',
+                                          img: 'assets/ray.jpg',
                                         ),
                                       ],
                                     ),
                                   ),
+                                  const SizedBox(height: 20),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Shoutsy Tools',
+                                        style: GoogleFonts.roboto(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 20),
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(height: 20),
+                                  SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      children: const [
+                                        ShoutsyTools(
+                                          text: 'Campaign\nManagement',
+                                          text2:
+                                              'Let our team find\ninfluencers for you!',
+                                          color2: Color(0xff29B3FE),
+                                          color: Color(0xffB83FFA),
+                                          image: 'assets/loud.png',
+                                        ),
+                                        SizedBox(width: 10),
+                                        ShoutsyTools(
+                                            color2: Color(0xff893EF6),
+                                            color: Color(0xffB83FFA),
+                                            text: 'Brand Referal',
+                                            image: "assets/diamond.png",
+                                            text2:
+                                                'Refer brands and \nget 10% of their first\npurchase!'),
+                                        SizedBox(width: 10),
+                                        ShoutsyTools(
+                                            color2: Color(0xff00FFF0),
+                                            color: Color(0xff0083FE),
+                                            text: 'Get Featured',
+                                            image:"assets/subtract.png",
+                                            text2:
+                                                'Be discovered at the\ntop of the\nmarketplace!')
+                                      ],
+                                    ),
+                                  )
                                 ],
                               ),
-                            ),
-                            const SizedBox(height: 20),
-                            Row(
-                              children: [
-                                Text(
-                                  'Featured Shouters',
-                                  style: GoogleFonts.roboto(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 20),
-                            SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                children: const [
-                                  FeaturedShouters(
-                                    text: 'Island boys',
-                                    img: 'assets/island.jpg',
-                                  ),
-                                  SizedBox(width: 20),
-                                  FeaturedShouters(
-                                    text: 'Sommer Ray',
-                                    img: 'assets/ray.jpg',
-                                  ),
+                              const SizedBox(height: 10),
+                              Row(
+                                children: [
+                                  Text(
+                                    'Text Boxes',
+                                    style: GoogleFonts.roboto(
+                                        fontWeight: FontWeight.w500, fontSize: 18),
+                                  )
                                 ],
                               ),
-                            ),
-                            const SizedBox(height: 20),
-                            Row(
-                              children: [
-                                Text(
-                                  'Shoutsy Tools',
-                                  style: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 20),
-                                )
-                              ],
-                            ),
-                            const SizedBox(height: 20),
-                            SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                children: const [
-                                  ShoutsyTools(
-                                    text: 'Campaign\nManagement',
-                                    text2:
-                                        'Let our team find\ninfluencers for you!',
-                                    color2: Color(0xff29B3FE),
-                                    color: Color(0xffB83FFA),
-                                  ),
-                                  SizedBox(width: 10),
-                                  ShoutsyTools(
-                                      color2: Color(0xff893EF6),
-                                      color: Color(0xffB83FFA),
-                                      text: 'Brand Referal',
-                                      text2:
-                                          'Refer brands and \nget 10% of their first\npurchase!'),
-                                  SizedBox(width: 10),
-                                  ShoutsyTools(
-                                      color2: Color(0xff00FFF0),
-                                      color: Color(0xff0083FE),
-                                      text: 'Get Featured',
-                                      text2:
-                                          'Be discovered at the\ntop of the\nmarketplace!')
-                                ],
-                              ),
-                            )
-                          ],
+                              
+
+                            ],
+                          ),
                         ),
-                        const SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Text(
-                              'Text Boxes',
-                              style: GoogleFonts.roboto(
-                                  fontWeight: FontWeight.w700, fontSize: 20),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
+                        // const SizedBox(height: 10),
+                      )
+                    ],
                   ),
-                  // const SizedBox(height: 10),
-                )
-              ],
-            ),
-          ),
-        ]),
+                ),
+              ),
+            ]),
+          ],
+        ),
       ),
     );
   }
