@@ -21,57 +21,47 @@ class BrandOverview extends StatelessWidget {
     int _currentIndex = 0;
 
     return Scaffold(
-      bottomNavigationBar: BottomAppBar(
-        elevation: 0,
-        child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(14),
-              topRight: Radius.circular(14),
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: List.generate(
-                5,
-                (index) => GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _currentIndex = index;
-                    });
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 22, vertical: 10),
-                    margin: const EdgeInsets.symmetric(vertical: 8),
-                    decoration: BoxDecoration(
-                      color: _currentIndex == index
-                          ? const Color(0xff00C9FF)
-                          : Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Icon(
-                      _icons[index],
-                      size: 26,
-                      color: _currentIndex == index
-                          ? Colors.white
-                          : const Color(0xff4F4F4F),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
+      // bottomNavigationBar: Container(
+      //   height: 80,
+      //   margin: EdgeInsets.symmetric(horizontal: 15,vertical: 30),
+      //   child: ClipRRect(
+      //     borderRadius: BorderRadius.circular(15),
+      //     child: BottomNavigationBar(
+      //       type: BottomNavigationBarType.fixed,
+      //       selectedItemColor: Colors.blue[700],
+      //       selectedFontSize: 0.0,
+      //       unselectedFontSize: 0.0,
+      //       showSelectedLabels: false,
+      //       showUnselectedLabels: false,
+      //       iconSize: 25,
+      //       items: [
+      //         BottomNavigationBarItem(
+      //           label: "Home",
+      //           icon: Icon(Icons.home),
+      //         ),
+      //         BottomNavigationBarItem(
+      //           label: "Search",
+      //           icon: Icon(Icons.search),
+      //         ),
+      //         BottomNavigationBarItem(
+      //           label: "Categories",
+      //           icon: Icon(Icons.grid_view),
+      //         ),
+      //         BottomNavigationBarItem(
+      //           label: "My Account",
+      //           icon: Icon(Icons.account_circle_outlined),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
       body: SingleChildScrollView(
-        child: Column(
+        child: Stack(
+          alignment: Alignment.topRight,
+
           children: [
             Stack(
+              alignment: Alignment.topCenter,
                 children: [
 
             Container(
@@ -351,6 +341,8 @@ class BrandOverview extends StatelessWidget {
                                       ),
                                     ],
                                   ),
+                                  const SizedBox(height: 20),
+
                                   SingleChildScrollView(
                                     scrollDirection: Axis.horizontal,
                                     child: Row(
@@ -412,7 +404,7 @@ class BrandOverview extends StatelessWidget {
                                   )
                                 ],
                               ),
-                              const SizedBox(height: 10),
+                              const SizedBox(height: 40),
                               Row(
                                 children: [
                                   Text(
@@ -422,6 +414,90 @@ class BrandOverview extends StatelessWidget {
                                   )
                                 ],
                               ),
+
+                              Container(
+                                margin:EdgeInsets.symmetric(horizontal:15),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height:30),
+                                    Text(
+                                      'Average Brand Deals Per Month',
+                                      style: GoogleFonts.roboto(
+                                          fontWeight: FontWeight.w700, fontSize: 15),
+                                    ),
+                                    SizedBox(height:10),
+                                    Container(
+                                      width: double.infinity,
+                                      height: 50.0,
+                                      padding:EdgeInsets.symmetric(horizontal:20),
+
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(7.0),
+                                          border: Border.all(color: Colors.grey.shade300)),
+                                      child: DropdownButton<String>(
+                                        underline: Container(),
+                                        isExpanded: true,
+                                        hint: Text("Select amount",style:TextStyle(color:Colors.grey.shade400)),
+                                        items: <String>['\$100', '\$200', '\$300', '\$500'].map((String value) {
+                                          return new DropdownMenuItem<String>(
+                                            value: value,
+                                            child: new Text(value),
+                                          );
+                                        }).toList(),
+                                        onChanged: (_) {},
+                                      ),
+                                    ),
+                                    SizedBox(height:20),
+                                    Text(
+                                      'What’s your main social media?',
+                                      style: GoogleFonts.roboto(
+                                          fontWeight: FontWeight.w700, fontSize: 15),
+                                    ),
+                                    SizedBox(height:10),
+                                    Container(
+                                      width: double.infinity,
+                                      height: 50.0,
+                                      padding:EdgeInsets.symmetric(horizontal:20),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(7.0),
+                                          border: Border.all(color: Colors.grey.shade300)),
+                                      child: DropdownButton<String>(
+                                        underline: Container(),
+                                        isExpanded: true,
+                                        hint: Text("Select network",style:TextStyle(color:Colors.grey.shade400)),
+                                        items: <String>['Messaging', 'Facebook', 'Tick tok', 'Other'].map((String value) {
+                                          return new DropdownMenuItem<String>(
+                                            value: value,
+                                            child: new Text(value),
+                                          );
+                                        }).toList(),
+                                        onChanged: (_) {},
+                                      ),
+                                    ),
+                                    SizedBox(height:20),
+                                    Text(
+                                      'Would you want your inquiries handled?',
+                                      style: GoogleFonts.roboto(
+                                          fontWeight: FontWeight.w700, fontSize: 15),
+                                    ),
+                                    SizedBox(height:10),
+                                    Container(
+                                      width: double.infinity,
+                                      height: 50.0,
+                                      padding:EdgeInsets.symmetric(horizontal:20,vertical: 15),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(7.0),
+                                          border: Border.all(color: Colors.grey.shade300)),
+                                      child: Text('Text',style:TextStyle(color:Colors.grey.shade400)),
+                                    ),
+                                    SizedBox(height:30),
+
+
+                                  ],
+                                ),
+                              )
+
                               
 
                             ],
@@ -433,7 +509,19 @@ class BrandOverview extends StatelessWidget {
                   ),
                 ),
               ),
+                  Container(
+                    height: 250,
+
+                   child:Padding(
+                     padding: const EdgeInsets.all(70.0),
+                     child: Image.asset('assets/logo.png'),
+                   )),
+
             ]),
+            Container(
+              height: 35,
+                margin: EdgeInsets.only(right: 20,top: 50),
+                child: Image.asset('assets/menu.png',))
           ],
         ),
       ),
